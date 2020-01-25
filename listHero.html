@@ -6,6 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title> </title>
   </head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    img {
+      width: 200px;
+      height: 120px;
+    }
+    ul {
+      list-style: none;
+    }
+  </style>
   <body>
     <div class="container"></div>
   </body>
@@ -19,11 +32,11 @@
         <h2>Name: ${hero.name}</h2>
         <img src="${hero.image.url}"></img>
         <ul><li>Abilities</li>
-      <li>${hero.powerstats.intelligence}</li>
-      <li>${hero.powerstats.strength}</li>
-      <li>${hero.powerstats.speed}</li>
-      <li>${hero.powerstats.durability}</li>
-      <li>${hero.powerstats.durability}</li>
+      <li>Intelligence${hero.powerstats.intelligence}</li>
+      <li>Strenght${hero.powerstats.strength}</li>
+      <li>Speed${hero.powerstats.speed}</li>
+      <li>Durability${hero.powerstats.durability}</li>
+      
     </ul>
       <div>
       `;
@@ -34,6 +47,6 @@
       .then(response => response.json())
       .then(dados => dados.map(hero => createHero(hero)));
 
-    console.log(heroi);
+    console.log(hero);
   </script>
 </html>
