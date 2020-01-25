@@ -32,10 +32,10 @@
         <h2>Name: ${hero.name}</h2>
         <img src="${hero.image.url}"></img>
         <ul><li>Abilities</li>
-      <li>Intelligence${hero.powerstats.intelligence}</li>
-      <li>Strenght${hero.powerstats.strength}</li>
-      <li>Speed${hero.powerstats.speed}</li>
-      <li>Durability${hero.powerstats.durability}</li>
+      <li>Intelligence:${hero.powerstats.intelligence}</li>
+      <li>Strenght:${hero.powerstats.strength}</li>
+      <li>Speed:${hero.powerstats.speed}</li>
+      <li>Durability:${hero.powerstats.durability}</li>
       
     </ul>
       <div>
@@ -46,7 +46,5 @@
     fetch(json)
       .then(response => response.json())
       .then(dados => dados.map(hero => createHero(hero)));
-
-    console.log(hero);
   </script>
 </html>
