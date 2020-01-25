@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> </title>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+  <script>
+    const json =
+      "https://my-json-server.typicode.com/dfealves/heroi-fakeapi/herois";
+
+    function createHero(hero) {
+      document.querySelector(".container").innerHTML += `
+      <div>
+        <h2>Name: ${hero.name}</h2>
+        <img src="${hero.image.url}"></img>
+        <ul><li>Abilities</li>
+      <li>${hero.powerstats.intelligence}</li>
+      <li>${hero.powerstats.strength}</li>
+      <li>${hero.powerstats.speed}</li>
+      <li>${hero.powerstats.durability}</li>
+      <li>${hero.powerstats.durability}</li>
+    </ul>
+      <div>
+      `;
+    }
+
+    //const url = "https://superheroapi.com/api/2735761446492168";
+    fetch(json)
+      .then(response => response.json())
+      .then(dados => dados.map(hero => createHero(hero)));
+
+    console.log(heroi);
+  </script>
+</html>
